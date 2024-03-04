@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: bankingapp-fund-transfer-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bankingapp-fund-transfer-service
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+      format_sql: true
+  kafka:
+    bootstrap-servers: localhost:9092
+
+server:
+  port: 8093
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: false
+
+bankingapp:
+  kafka:
+    topic:
+      fund-transfers: fund-transfers
+      transaction: transactions
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
