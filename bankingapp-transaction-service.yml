@@ -2,7 +2,7 @@ spring:
   application:
     name: bankingapp-transaction-service
   datasource:
-    url: jdbc:postgresql://db:5432/bankingapp-transaction-service
+    url: jdbc:postgresql://${DB}:5432/bankingapp-transaction-service
     username: postgres
     password: postgres
 
@@ -15,7 +15,7 @@ spring:
 #    console:
 #      enabled: true
   kafka:
-    bootstrap-servers: kafka:9092
+    bootstrap-servers: ${KAFKA_BOOSTRAP_SERVERS}
 
 server:
   port: 8092
@@ -23,7 +23,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://bankingapp-registry-service:8761/eureka
+      defaultZone: http://${REGISTRY_SERVER_HOST}:8761/eureka
     register-with-eureka: true
     fetch-registry: true
 
