@@ -23,7 +23,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${REGISTRY_SERVER_HOST}:8761/eureka
+      defaultZone: http://${REGISTRY_SERVER_HOST}/eureka
     register-with-eureka: true
     fetch-registry: true
 
